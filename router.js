@@ -1,8 +1,10 @@
 import renderMain from "./pages/main/main.js";
 import renderAbout from "./pages/about/about.js";
+import renderMovies from "./pages/movies/movies.js";
+import renderTickets from "./pages/tickets/tickets.js";
 
 export default function () {
-  window.router = new Navigo("/", { hash: true });
+  const router = new Navigo("/", { hash: true });
 
   router
     .on({
@@ -14,6 +16,12 @@ export default function () {
       about: () => {
         renderAbout();
       },
+      movies: () => {
+        renderMovies();
+      },
+      tickets: () => {
+        renderTickets();
+      }
     })
     .resolve();
 }
