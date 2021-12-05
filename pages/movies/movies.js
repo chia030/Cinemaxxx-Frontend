@@ -9,12 +9,16 @@ const getMovies = () => {
   Http.send(); //async request
 
   const moviesParagraph = document.querySelector("#movies");
+  moviesParagraph.innerHTML = "";
 
   // when something changes ->
   Http.onreadystatechange = (e) => {
 
-    console.log(Http.responseText)
-    moviesParagraph.innerHTML = Http.responseText;
+    const movieArray = JSON.parse(Http.response);
+
+    movieArray.forEach(movie => {
+      moviesParagraph.innerHTML += movie.title+"<br>";
+    });
 
   }
 
