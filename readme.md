@@ -1,11 +1,11 @@
 # Frontend of Cinemaxxx
 This project will serve as a proof of concept for the organization Cinema-xx.
 
-## Frontend hosted link :
-http://cinemaxxx.surge.sh/ (https doesn't work with the api because our backend is hosted on http)
+## Frontend hosted link : http://cinemaxxx.surge.sh/ (https doesn't work with the api because our backend is hosted on http)
+ 
 
-## Backend hosted link :
-http://54.221.49.14:9090/
+## Backend hosted link : http://54.221.49.14:9090/
+
 
 ## Who focused on what parts:
 Chiara = first layer of code, connecting to the api, routing and movies list.
@@ -29,5 +29,5 @@ Samuel = timetable and connecting to the api.
 •    As a customer I want to be able to quickly find information about movies that are playing and the cinema, so I can pick a movie and find out basic information about the cinema - (Create a welcome page showing info about both the cinema and the movies playing.) - 3 story points (STATUS: NOT COMPLETED, the user can only view which movies are playing and info about the cinema).
 
 
-## Backend/API code: 
-https://github.com/VingardiumGloriosa/Cinema-XXX
+## Backend/API code: https://github.com/VingardiumGloriosa/Cinema-XXX
+
