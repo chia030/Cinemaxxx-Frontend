@@ -11,10 +11,10 @@ http://54.221.49.14:9090/
 
 
 ## Who focused on what parts:
-- Chiara = first layer of code, connecting to the api, routing and movies list.
-- Gloria = main page and about page, connecting to the api.
-- Patrik = hosting the backend properly, connecting to the api.
-- Samuel = timetable and connecting to the api.
+- Chiara (chia030) = first layer of code, connecting to the api, routing and movies list.
+- Gloria (VingardiumGloriosa) = main page and about page, connecting to the api.
+- Patrik (MrBigRedButton) = hosting the backend properly, connecting to the api.
+- Samuel (DedicatedWorker4ever) = timetable and connecting to the api.
 
 
 ## Sprints and planning
