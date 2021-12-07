@@ -2,6 +2,7 @@ import renderMain from "./pages/main/main.js";
 import renderAbout from "./pages/about/about.js";
 import renderMovies from "./pages/movies/movies.js";
 import renderTickets from "./pages/tickets/tickets.js";
+import renderTimetable from "./pages/timetable/timetable.js";
 
 export default function () {
   const router = new Navigo("/", { hash: true });
@@ -21,6 +22,9 @@ export default function () {
       },
       tickets: () => {
         renderTickets();
+      },
+      timetable: () => {
+        renderTimetable();
       }
     })
     .resolve();
