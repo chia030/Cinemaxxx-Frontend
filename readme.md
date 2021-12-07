@@ -1,10 +1,3 @@
-# Frontend of Cinemaxxx
-This project will serve as a proof of concept for the organization Cinema-xx.
-
-## Backend/API: 
-https://github.com/VingardiumGloriosa/Cinema-XXX
-
-
 ## Frontend hosted link :
 https://cinemaxxx.surge.sh/
 
@@ -36,3 +29,5 @@ http://54.221.49.14:9090/
 •    Style the website.
 •    Implement security.
 •    Other features.
+
+
