@@ -25,18 +25,41 @@ const getMovies = () => {
 
 
 
-async function loadMovies() {
+//get movie posters on load
+async function loadCurrentMoviePosters() {
 
-  const response = await fetch('http://54.221.49.14:9090/api/movies');
+  const moviesParagraph = document.querySelector(".movies-container");
+
+  let response = await fetch('http://54.221.49.14:9090/api/screenings/get');
+  const screeningArray = await response.json();
+  
+  screeningArray.forEach(screening => {
+    var div = document.createElement("div");
+    div.className="movie";  
+    var img = document.createElement("img");
+    var str = screening.movie.poster;
+    img.src = img.src = str.replace(/\s/g, '');
+    div.appendChild(img);
+    moviesParagraph.appendChild(div );
+  });
+}
+
+//get movie posters on load
+async function loadAllMoviePosters() {
+
+  let response = await fetch('http://54.221.49.14:9090/api/movies');
   const movieArray = await response.json();
-  const moviesParagraph = document.querySelector("#movies");
-  moviesParagraph.innerHTML = "";
+  const moviesParagraph = document.querySelector(".movies-container2");
 
   movieArray.forEach(movie => {
-    console.log(movie.title);
-    moviesParagraph.innerHTML += movie.title+"<br>";
+    var div = document.createElement("div");
+    div.className="movie";  
+    var img = document.createElement("img");
+    var str = movie.poster;
+    img.src = img.src = str.replace(/\s/g, '');
+    div.appendChild(img);
+    moviesParagraph.appendChild(div );
   });
-
 }
 
 
@@ -52,8 +75,9 @@ async function loadMovies() {
         content.innerHTML = moviesHtml;
 
         //setting onclick to getMovies()
-        const displayMoviesButton = document.querySelector("#display-movies-button");
-        displayMoviesButton.onclick = loadMovies;     
-        
+        //const displayMoviesButton = document.querySelector("#display-movies-button");
+        //displayMoviesButton.onclick = loadMovies;     
+        loadCurrentMoviePosters();  
+        loadAllMoviePosters();  
       });
   }; 

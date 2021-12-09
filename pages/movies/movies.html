@@ -1,20 +1,35 @@
 <!DOCTYPE html>
-    <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>Movies</title>
-    </head>
-    <body>
-        <h1>
-            <a href="/">Cinema-XXX</a>
-        </h1>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="pages\movies\movies.css">
+    <title>Cinema-XXX</title>
+</head>
+<body>
+    <nav class="navMenu">
+      <a href="/" data-navigo>
+        <img src="Cinema xxx (2).png" id="logo">
+      </a>
+      <a href="/#/about" data-navigo>About</a>
+      <a href="/#/movies" data-navigo>Movies</a>
+      <a href="/#/tickets" data-navigo>Tickets</a>
+      <a href="/#/employee" data-navigo>Employee</a>
+    </nav>   
 
-        <div class="content">
-            <h2>movies</h2>
-            <button id="display-movies-button">Display Movies</button>
-            <p id="movies"></p>
-        </div>
+    <h3>CURRENT SHOWINGS</h3> 
+    <div class="movies-container"></div>   
 
-        <script src="movies.js"></script>
+    <h3>ALL MOVIES</h3> 
+    <div class="movies-container2"></div>   
         
-    </body>
-</html>
+     
+         <nav class="navMenu footer">
+          <a href="/" data-navigo>Cinema-XXX</a>
+          <a href="/#/about" data-navigo>About</a>
+          <a href="/#/movies" data-navigo>Movies</a>
+          <a href="/#/tickets" data-navigo>Tickets</a>
+          <a href="/#/employee" data-navigo>Employee</a>
+        </nav>
+        <script src="movies.js"></script>
+
+</body>
+</html> 
