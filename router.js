@@ -5,27 +5,33 @@ import renderTickets from "./pages/tickets/tickets.js";
 import renderTimetable from "./pages/timetable/timetable.js";
 
 export default function () {
-  const router = new Navigo("/", { hash: true });
+
+  window.router = new Navigo("/", {hash: true});
 
   router
-    .on({
+    .on({ 
       "/": () => {
         // call updatePageLinks to let navigo handle the links
         // when new links have been inserted into the dom
-        renderMain().then(router.updatePageLinks);
-      },
-      about: () => {
-        renderAbout();
-      },
-      movies: () => {
-        renderMovies();
-      },
-      tickets: () => {
-        renderTickets();
-      },
-      timetable: () => {
-        renderTimetable();
-      }
-    })
+
+
+      renderMain().then(router.updatePageLinks);
+    },
+    about: () => {
+      renderAbout();
+      router.updatePageLinks();
+    },
+    movies: () => {
+      renderMovies();
+      router.updatePageLinks();
+    },
+    "/tickets/:id/": ({ data, params }) => {
+        renderTickets(data.id);
+      router.updatePageLinks();
+    },
+     timetable: () => {
+        renderTimetable().then(router.updatePageLinks);
+     }
+  })
     .resolve();
 }
