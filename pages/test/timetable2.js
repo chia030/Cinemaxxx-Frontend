@@ -28,7 +28,7 @@ document.getElementById("btnSearch").addEventListener("click", event => {
             console.log(movieTitleExists);
 
             titleDiv.textContent = content[i].movie.title;
-            timeDiv.textContent = content[i].time + " " + content[i].date;
+            timeDiv.innerHTML = `<a href="/tickets/${content[i].screeningId}" data-navigo> ${content[i].time} ${content[i].date}</a>`;
             
             if(movieTitleExists){ //check if div element witht this movie title alreadu exists to insert time and date
               movieTitleExists.appendChild(timeDiv);
