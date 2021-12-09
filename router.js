@@ -20,11 +20,11 @@ export default function () {
       movies: () => {
         renderMovies();
       },
-      tickets: () => {
-        renderTickets();
+      "/tickets/:id/": ({ data, params }) => {
+        renderTickets(data.id);
       },
       timetable: () => {
-        renderTimetable();
+        renderTimetable().then(router.updatePageLinks);
       }
     })
     .resolve();
