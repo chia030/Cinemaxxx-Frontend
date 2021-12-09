@@ -1,11 +1,39 @@
 <!DOCTYPE html>
-    <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>Movies</title>
-    </head>
-    <body>
-        <h1>
-            <a href="/">Cinema-XXX</a>
-        </h1>
-    </body>
-</html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="pages\tickets\tickets.css">
+    <title>Tickets</title>
+</head>
+<body>
+    <nav class="navMenu">
+      <a href="/" data-navigo>
+        <img src="Cinema xxx (2).png" id="logo">
+      </a>
+      <a href="/about" data-navigo>About</a>
+      <a href="/#/movies" data-navigo>Movies</a>
+      <a href="/#/tickets" data-navigo>Tickets</a>
+      <a href="/#/employee" data-navigo>Employee</a>
+    </nav>   
+
+    <h3>Add movie</h3>
+    <p>
+        In order to add a movie you must know it´s ID. In case you don´t know it, find it on imdb and copy the id from the URL. Afterwards write this ID in the form bellow. Your desired movie will be added.
+    </p>
+    <button class="button">TO SEARCH FOR A MOVIE PRESS ME</button>
+
+    <form id="new-movie">
+        <label>Movie ID</label>
+        <input type="text" id="movieID"><br>
+        <input type="submit" value="Add">
+    </form>
+             
+    <nav class="navMenu footer">
+          <a href="/" data-navigo>Cinema-XXX</a>
+          <a href="/about" data-navigo>About</a>
+          <a href="/#/movies" data-navigo>Movies</a>
+          <a href="/#/tickets" data-navigo>Tickets</a>
+          <a href="/#/employee" data-navigo>Employee</a>
+    </nav>    
+    <script src="tickets.js"></script>
+</body>
+</html> 
