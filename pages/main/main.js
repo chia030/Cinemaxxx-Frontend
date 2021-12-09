@@ -11,7 +11,6 @@ async function loadMoviePosters() {
     var img = document.createElement("img");
     var str = movie.poster;
     img.src = img.src = str.replace(/\s/g, '');
-    console.log(img.src);
     div.appendChild(img);
     moviesParagraph.appendChild(div );
   });
