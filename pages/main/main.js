@@ -1,38 +1,21 @@
 //get movie posters on load
-function getMoviePosters(){ 
-  console.log("please");
+async function loadMoviePosters() {
 
-  const Http = new XMLHttpRequest();
-  const url="http://54.221.49.14:9090/api/movies";
+  const response = await fetch('http://54.221.49.14:9090/api/movies');
+  const movieArray = await response.json();
+  const moviesParagraph = document.querySelector(".movies-container");
 
-  Http.open("GET", url);
-  Http.send(); //async request
+  movieArray.forEach(movie => {
+    var div = document.createElement("div");
+    div.className="movie";  
+    var img = document.createElement("img");
+    var str = movie.poster;
+    img.src = img.src = str.replace(/\s/g, '');
+    console.log(img.src);
+    div.appendChild(img);
+    moviesParagraph.appendChild(div );
+  });
 
-  //const moviesParagraph = document.querySelector(".movies");
-  //moviesParagraph.innerHTML = "";
-
-  var img = document.createElement("img");
-  var src = document.getElementsByClassName("movie");
-  
-  // when something changes ->
-  Http.onreadystatechange = (e) => {
-  const movieArray = JSON.parse(Http.response);
-    //console.log(Http.response);  
-    
-
-    movieArray.forEach(movie => {
-      var str = movie.poster;
-      img.src = str.replace(/\s/g, '');
-      console.log(img.src);
-      //src.appendChild(img);
-    });
-
-  }
-
-}
-
-function randomly(){
-  console.log("randomly");
 }
 
 export default () => {
@@ -42,7 +25,7 @@ export default () => {
     .then((response) => response.text())
     .then((mainHtml) => {
       content.innerHTML = mainHtml;  
-      console.log("fuck me");  
-      getMoviePosters();  
+      loadMoviePosters();  
     });
 };
+	
