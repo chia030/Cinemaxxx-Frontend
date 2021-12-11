@@ -7,7 +7,7 @@ http://cinemaxxx.surge.sh/ (https doesn't work with the api because our backend 
  
  
 ## Backend hosted link : 
-http://54.221.49.14:9090/
+http://54.158.180.212:9090/
 
 
 ## Who focused on what parts:
@@ -34,4 +34,3 @@ http://54.221.49.14:9090/
 
 ## Backend/API code: 
 https://github.com/VingardiumGloriosa/Cinema-XXX
-
