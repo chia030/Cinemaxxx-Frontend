@@ -4,6 +4,7 @@ async function loadMoviePosters() {
   let response = await fetch('http://54.158.180.212:9090/api/movies');
   const movieArray = await response.json();
   const moviesParagraph = document.querySelector(".movies-container");
+  
 /*
   movieArray.forEach(movie => {
     var div = document.createElement("div");

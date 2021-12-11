@@ -1,42 +1,41 @@
-async function fetchScreenings(url) {
 
-  const response = await fetch(url, { method: 'GET' });
-  const responseArray = await response.json();
 
-  const fig = document.createElement("figure");
-  const paragraph = document.createElement("p");
+const fetchFreeSeats = (screening) => {
 
-  responseArray.forEach(screening => {
-    paragraph.innerHTML += screening.movie.title + " " + screening.time + " " + screening.date + "<br>";
-  })
+  const getScreeningUrl = `http://54.158.180.212:9090/api/screenings/get-by-id/${screening}`;
+  const getTicketsUrl = `http://54.221.49.14:9090/api/tickets/getSeats/1/false/${screening}/`;
+  // url explained .../api/tickets/getSeats/userId=1(this is an admin)/purchased=false(so 'free' seats)/screenindId/`
 
-  fig.appendChild(paragraph);
+  return fetch(getScreeningUrl)
+         .then((response) => response.json())
+         .then((screeningInfo) => {
+           fetch(getTicketsUrl)
+           .then((response) => response.json())
+           .then((seatsArray) => {
+          
+          const div = document.querySelector(".screening-available-seats");
+          const p = document.createElement("p");
 
-  const output = document.querySelector('.output');
-  output.innerHTML = fig.outerHTML;
+          p.innerHTML = `AVAILABLE TICKETS FOR SCREENING: #${screening} ${screeningInfo.movie.title} <br>`;
 
+          seatsArray.forEach(ticket => {
+            p.innerHTML += `ticket id:${ticket.ticketId}, row:${ticket.seat.seatRow}, column:${ticket.seat.seatColumn}, hall:${ticket.seat.hall.hallId}<br>`;
+          });
+
+          div.appendChild(p);
+
+         })});
 }
 
+  export default (id) => {
 
-export default () => {
     const content = document.querySelector(".content");
-  
-    return fetch("./pages/tickets/tickets.html")
-      .then((response) => response.text())
-      .then((ticketsHtml) => {
-        content.innerHTML = ticketsHtml;
 
-        document.querySelector("#btn-search").onclick = (e) => {
-
-          e.preventDefault();
-        
-          let dateFrom = document.getElementById("date-from").value;
-          let dateTo = document.getElementById("date-to").value;
-          
-          // need to change for server when its up and running
-          let url = `http://54.158.180.212:9090/api/screenings/get?date1=${dateFrom}&date2=${dateTo}`;
+    fetch("./pages/tickets/tickets.html")
+        .then((response) => response.text())
+        .then((ticketsHtml) => {
+          content.innerHTML = ticketsHtml;
+          fetchFreeSeats(id);
+        });
     
-          fetchScreenings(url);
-      }
-    });
-  };
+  }

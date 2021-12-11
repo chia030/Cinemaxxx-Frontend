@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="tickets2.css" />
+    <title>Movie Seat Booking</title>
+  </head>
+  <body>
+
+    <h1>
+        <a href="/">Cinema-XXX</a>
+    </h1>
+    <h2></h2>
+    <ul class = "screening-info">
+      <li class="date"></li>
+      <li class="time"></li>
+      <li class="hall"></li>
+    </ul>
+
+    <ul class="showcase">
+      <li>
+        <div class="seat"></div>
+        <small>N/A</small>
+      </li>
+
+      <li>
+        <div class="seat selected"></div>
+        <small>Selected</small>
+      </li>
+
+      <li>
+        <div class="seat occupied"></div>
+        <small>Occupied</small>
+      </li>
+    </ul>
+
+    <div class="container">
+      <div class="screen"></div>
+      <div class="row" id="1"></div>
+      <div class="row" id="2"></div>
+      <div class="row" id="3"></div>
+      <div class="row" id="4"></div>
+      <div class="row" id="5"></div>
+      <div class="row" id="6"></div>
+      <div class="row" id="7"></div>
+      <div class="row" id="8"></div>
+      <div class="row" id="8"></div>
+      <div class="row" id="10"></div>
+      <div class="row" id="11"></div>
+    </div>
+
+    <p class="text">
+      You have selected <span id="count">0</span> seats for a price of $<span id="total">0</span>
+    </p>
+    <button id="reserveBtn">Reserve tickets</button>
+    <script src="tickets2.js"></script>
+  </body>
+</html>
