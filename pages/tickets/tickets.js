@@ -1,69 +1,41 @@
 
-async function fetchScreenings(url) {
 
-  const response = await fetch(url, { method: 'GET' });
-  const responseArray = await response.json();
+const fetchFreeSeats = (screening) => {
 
-  const fig = document.createElement("figure");
-  const paragraph = document.createElement("p");
+  const getScreeningUrl = `http://54.158.180.212:9090/api/screenings/get-by-id/${screening}`;
+  const getTicketsUrl = `http://54.221.49.14:9090/api/tickets/getSeats/1/false/${screening}/`;
+  // url explained .../api/tickets/getSeats/userId=1(this is an admin)/purchased=false(so 'free' seats)/screenindId/`
 
-  responseArray.forEach(screening => {
-    paragraph.innerHTML += screening.movie.title + " " + screening.time + " " + screening.date + "<br>";
-  })
-
-  fig.appendChild(paragraph);
-
-  const output = document.querySelector('.output');
-  output.innerHTML = fig.outerHTML;
-
-}
-  
-/* Samuel's stuff:
-
-export default (screeningId) => {
-const content = document.querySelector(".content");
-  
-    return fetch("./pages/tickets/tickets.html")
-      .then((response) => response.text())
-      .then((ticketsHtml) => {
-        content.innerHTML = ticketsHtml;
-        
-        return fetch(`http://54.221.49.14:9090/api/screenings/get-by-id/${screeningId}`)
-        .then((response) => response.json())
-        .then((screening) => {
-          document.querySelector("h2").innerText = screening.movie.title;
-          document.querySelector("li.date").innerHTML = screening.date;
-          document.querySelector("li.time").innerHTML = screening.time;
-          document.querySelector("li.hall").innerHTML = screening.hall.hallId;
-        });
-      });
-        };
-        
-        */
-
-
-
-export default () => {
-    const content = document.querySelector(".content");
-  
-    return fetch("./pages/tickets/tickets.html")
-      .then((response) => response.text())
-      .then((ticketsHtml) => {
-        content.innerHTML = ticketsHtml;
-        
-       
-        document.querySelector("#btn-search").onclick = (e) => {
-
-          e.preventDefault();
-        
-          let dateFrom = document.getElementById("date-from").value;
-          let dateTo = document.getElementById("date-to").value;
+  return fetch(getScreeningUrl)
+         .then((response) => response.json())
+         .then((screeningInfo) => {
+           fetch(getTicketsUrl)
+           .then((response) => response.json())
+           .then((seatsArray) => {
           
-          // need to change for server when its up and running
-          let url = `http://54.158.180.212:9090/api/screenings/get?date1=${dateFrom}&date2=${dateTo}`;
-    
-          fetchScreenings(url);
-      }
-    });
+          const div = document.querySelector(".screening-available-seats");
+          const p = document.createElement("p");
 
-  };
+          p.innerHTML = `AVAILABLE TICKETS FOR SCREENING: #${screening} ${screeningInfo.movie.title} <br>`;
+
+          seatsArray.forEach(ticket => {
+            p.innerHTML += `ticket id:${ticket.ticketId}, row:${ticket.seat.seatRow}, column:${ticket.seat.seatColumn}, hall:${ticket.seat.hall.hallId}<br>`;
+          });
+
+          div.appendChild(p);
+
+         })});
+}
+
+  export default (id) => {
+
+    const content = document.querySelector(".content");
+
+    fetch("./pages/tickets/tickets.html")
+        .then((response) => response.text())
+        .then((ticketsHtml) => {
+          content.innerHTML = ticketsHtml;
+          fetchFreeSeats(id);
+        });
+    
+  }

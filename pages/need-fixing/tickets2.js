@@ -6,7 +6,6 @@ const movieSelect = document.getElementById('movie');
 const reserveBtn = document.getElementById('reserveBtn');
 
 
-
  var numberOfSeatsInHall = 0;
  var seatColumn;
  var seatRow = 0;
@@ -21,18 +20,18 @@ const reserveBtn = document.getElementById('reserveBtn');
  const userId = 72;
 
  //gets ID information, needs to be adjusted for navigo
- function screeningInfo() {        
-         return fetch(`http://54.221.49.14:9090/api/screenings/get-by-id/55`)
+ function screeningInfo(id) {        
+        fetch(`http://54.221.49.14:9090/api/screenings/get-by-id/${id}`)
          .then((response) => response.json())
          .then((data) => {
            console.log(data);
            document.querySelector("h2").innerText = `${data.movie.title}`;
            document.querySelector("li.date").innerHTML = `Date : ${data.date}`;
            document.querySelector("li.time").innerHTML = `Time : ${data.time}`;
-           document.querySelector("li.hall").innerHTML = `Hall : ${data.hall.hallId}`;
+           document.querySelector("li.hall").innerHTML = `Hall : ${data.hall.hallId} `;
            numberOfSeatsInHall = data.hall.numberOfSeats;
            screeningId = data.screeningId;
-         });
+        });
  }
 
 screeningInfo();
