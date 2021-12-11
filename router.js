@@ -4,6 +4,7 @@ import renderMovies from "./pages/movies/movies.js";
 import renderTickets from "./pages/tickets/tickets.js";
 import renderEmployee from "./pages/employee/employee.js";
 
+
 export default function () {
 
   window.router = new Navigo("/", {hash: true});
@@ -23,8 +24,8 @@ export default function () {
       renderMovies();
       router.updatePageLinks();
     },
-    tickets: () => {
-      renderTickets();
+    "/tickets/:id/": ({ data, params }) => {
+        renderTickets(data.id);
       router.updatePageLinks();
     },
     employee: () => {
