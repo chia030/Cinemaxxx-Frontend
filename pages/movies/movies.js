@@ -1,9 +1,9 @@
-
-// getMovies() is called onclick of "Display Movies" button
+//CHANGED DUE TO PERSISTENT JSON TOKEN ERROR
+/*
 const getMovies = () => { 
 
-  const Http = new XMLHttpRequest();
   const url="http://54.221.49.14:9090/api/movies";
+  const Http = new XMLHttpRequest();
 
   Http.open("GET", url);
   Http.send(); //async request
@@ -11,7 +11,7 @@ const getMovies = () => {
   const moviesParagraph = document.querySelector("#movies");
   moviesParagraph.innerHTML = "";
 
-  // when something changes ->
+  //when something changes ->
   Http.onreadystatechange = (e) => {
 
     const movieArray = JSON.parse(Http.response);
@@ -21,25 +21,45 @@ const getMovies = () => {
     });
 
   }
+}*/
 
 
-  // I DIDN'T KNOW HOW TO WORK WITH THIS SORRYYYYYYYYY
-  // fetch("http://54.221.49.14:9090/api/movies")
-  // .then((response) => {
-  //   if (response.ok) {
-  //     return response.json();
-  //   } else {
-  //     console.log("kill me");
-  //     throw new Error("NETWORK RESPONSE ERROR");
-  //   }
-  // })
-  // // .then(data => {
-  // //   console.log(data);
-  // //   var div = document.getElementsByClassName("content");
-  // //   div.innerHTML += "suck my dick"; 
-  // // })
-  // .catch((error) => console.error("FETCH ERROR:", error));
 
+//get movie posters on load
+async function loadCurrentMoviePosters() {
+
+  const moviesParagraph = document.querySelector(".movies-container");
+
+  let response = await fetch('http://54.158.180.212:9090/api/screenings/get');
+  const screeningArray = await response.json();
+  
+  screeningArray.forEach(screening => {
+    var div = document.createElement("div");
+    div.className="movie";  
+    var img = document.createElement("img");
+    var str = screening.movie.poster;
+    img.src = img.src = str.replace(/\s/g, '');
+    div.appendChild(img);
+    moviesParagraph.appendChild(div );
+  });
+}
+
+//get movie posters on load 
+async function loadAllMoviePosters() {
+
+  let response = await fetch('http://54.158.180.212:9090/api/movies');
+  const movieArray = await response.json();
+  const moviesParagraph = document.querySelector(".movies-container2");
+
+  movieArray.forEach(movie => {
+    var div = document.createElement("div");
+    div.className="movie";  
+    var img = document.createElement("img");
+    var str = movie.poster;
+    img.src = img.src = str.replace(/\s/g, '');
+    div.appendChild(img);
+    moviesParagraph.appendChild(div );
+  });
 }
 
 
@@ -55,8 +75,9 @@ const getMovies = () => {
         content.innerHTML = moviesHtml;
 
         //setting onclick to getMovies()
-        const displayMoviesButton = document.querySelector("#display-movies-button");
-        displayMoviesButton.onclick = getMovies;     
-        
+        //const displayMoviesButton = document.querySelector("#display-movies-button");
+        //displayMoviesButton.onclick = loadMovies;     
+        loadCurrentMoviePosters();  
+        loadAllMoviePosters();  
       });
   }; 
