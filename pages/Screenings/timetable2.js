@@ -16,10 +16,9 @@ document.getElementById("btnSearch").addEventListener("click", event => {
         fetch(url)
         .then(response => response.json())
         .then(content => {
-          //  data, pagination, meta
           console.log(content);
 
-          for(let i = 0; i <= 9; i++){
+          for(let i = 0; i <= Object.keys(content).length; i++){
             const div = document.createElement("div");
             const titleDiv = document.createElement("div");
             const timeDiv = document.createElement("div");
