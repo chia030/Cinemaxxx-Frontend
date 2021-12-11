@@ -34,4 +34,3 @@ http://54.158.180.212:9090/
 
 ## Backend/API code: 
 https://github.com/VingardiumGloriosa/Cinema-XXX
-
