@@ -3,7 +3,7 @@ export default () => {
   
     return fetch("./pages/employee/employee.html")
       .then((response) => response.text())
-      .then((ticketsHtml) => {
+      .then((employeeHtml) => {
         content.innerHTML = employeeHtml;
       });
   };
