@@ -9,7 +9,7 @@ https://github.com/VingardiumGloriosa/Cinema-XXX
 https://cinemaxxx.surge.sh/
 
 ## Backend hosted link
-http://54.221.49.14:9090/
+http://54.158.180.212:9090/
 
 ## Who focused on what parts:
 
