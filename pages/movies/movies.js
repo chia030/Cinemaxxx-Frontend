@@ -76,7 +76,8 @@ async function loadAllMoviePosters() {
 
         //setting onclick to getMovies()
         //const displayMoviesButton = document.querySelector("#display-movies-button");
-        //displayMoviesButton.onclick = loadMovies;     
+        //displayMoviesButton.onclick = loadMovies;  
+           
         loadCurrentMoviePosters();  
         loadAllMoviePosters();  
       });

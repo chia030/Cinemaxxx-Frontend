@@ -30,7 +30,7 @@ export default function () {
     employee: () => {
       renderEmployee();
       router.updatePageLinks();
-    }
+    },
   })
     .resolve();
 }
