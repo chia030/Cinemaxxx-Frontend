@@ -1,4 +1,7 @@
+
+
 export default () => {
+
   const content = document.querySelector(".content");
 
   fetch("./pages/about/about.html")
