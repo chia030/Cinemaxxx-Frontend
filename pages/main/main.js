@@ -1,7 +1,7 @@
 //get movie posters on load
 async function loadMoviePosters() {
 
-  let response = await fetch('http://54.221.49.14:9090/api/movies');
+  let response = await fetch('http://54.158.180.212:9090/api/movies');
   const movieArray = await response.json();
   const moviesParagraph = document.querySelector(".movies-container");
 /*
@@ -15,7 +15,7 @@ async function loadMoviePosters() {
     moviesParagraph.appendChild(div );
   });
 */
-  response = await fetch('http://54.221.49.14:9090/api/screenings/get');
+  response = await fetch('http://54.158.180.212:9090/api/screenings/get');
   const screeningArray = await response.json();
   
   screeningArray.forEach(screening => {
