@@ -105,3 +105,12 @@ h3{
     font-size: 40px;
     color: whitesmoke;
 }
+.movies-container2{
+  max-width:90%;
+  margin:3rem auto
+}
+
+.movies-container2{
+  display:flex;
+  flex-wrap:wrap;
+}

@@ -2,7 +2,8 @@ import renderMain from "./pages/main/main.js";
 import renderAbout from "./pages/about/about.js";
 import renderMovies from "./pages/movies/movies.js";
 import renderTickets from "./pages/tickets/tickets.js";
-import renderTimetable from "./pages/timetable/timetable.js";
+import renderEmployee from "./pages/employee/employee.js";
+
 
 export default function () {
 
@@ -27,9 +28,10 @@ export default function () {
         renderTickets(data.id);
       router.updatePageLinks();
     },
-     timetable: () => {
-        renderTimetable().then(router.updatePageLinks);
-     }
+    employee: () => {
+      renderEmployee();
+      router.updatePageLinks();
+    },
   })
     .resolve();
 }

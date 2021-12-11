@@ -1,8 +1,11 @@
-## Frontend hosted link :
-https://cinemaxxx.surge.sh/
 
-## Backend hosted link
-http://54.221.49.14:9090/
+## Frontend hosted link : 
+http://cinemaxxx.surge.sh/ (https doesn't work with the api because our backend is hosted on http)
+ 
+ 
+## Backend hosted link : 
+http://54.158.180.212:9090/
+
 
 ## Who focused on what parts:
 
@@ -30,4 +33,7 @@ http://54.221.49.14:9090/
 •    Implement security.
 •    Other features.
 
+
+## Backend/API code: 
+https://github.com/VingardiumGloriosa/Cinema-XXX
 
