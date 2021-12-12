@@ -109,3 +109,21 @@ h3{
 .offer img{
   width: 50%;
 }
+
+ul {
+  list-style-type: none; /* Remove bullets */
+  padding: 10; /* Remove padding */
+  margin: 20; /* Remove margins */
+}
+
+.screenings{
+  color: whitesmoke;
+  display: grid;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  padding-left: 5%;
+  padding-right: 5%;
+}

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel="stylesheet" href="pages\main\main.css">
-    <title>Customer</title>
+  <link rel="stylesheet" href="pages\employee\employee.css">
+  <title>Customer</title>
 </head>
 <body>
 
@@ -17,16 +17,19 @@
       <a href="/#/employee">Employee</a>
     </nav>
 
-    <div class="customer-tickets">
+    <div class="customer-tickets offer">
       <h3>View Tickets</h3>
       <p>
         As a customer, you have the option to view your purchased tickets and, if you need, cancel your reservation. You will be refunded via the same payment option you used for the purchase.
       </p>
 
       <form id='customer-tickets-form'>
+        <div class="spacer"></div>
         <label>User ID:</label>
         <input type='text' id='customer-id' placeholder="Insert ID..."><br>
+        <div class="spacer"></div>
         <input type="submit" value="View Tickets">
+        <div class="spacer"></div>
       </form>
 
       <div class="customer-tickets-output"></div>
