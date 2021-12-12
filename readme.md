@@ -8,23 +8,30 @@ http://54.158.180.212:9090/
 
 ## Who focused on what parts:
 
-Sam:
+Samuel(DedicatedWorker4ever or TheSamuelBartek):
+- Connecting to the api
 - Let user see all available seat for a show
 - Let users reserve tickets for a specific show
 - As a customer I want to be able to view timetables of movies, to choose a time of viewing, that best suits me
 
-Chiara:
-- Took care of the routing
-- Fixed screening 
-...
+Chiara(chia030):
+- first layer of code, 
+- connecting to the api,
+- routing with Navigo
+- worked on the /tickets section (reservation for a specific screening and checking which seats are reserved)
+- worked on the /customer section (let the customer view all of their reservations)
+- worked on the /employee section (let the employee add a new screening of a movie)
 
-Gloria:
+Gloria(VingardiumGloriosa):
+- Connecting to the api,
+- main page and about page
 - Display movies, add movie, movie info....
 - crying
 - styling of website
 
-Patrik:
-
+Patrik(MrBigRedButton):
+- hosting the backend properly, 
+- connecting to the api... (Patrik add more!)
 
 ## Sprints and planning
 
@@ -53,5 +60,7 @@ Patrik:
 
 ## Backend/API code: 
 https://github.com/VingardiumGloriosa/Cinema-XXX
+
+
 
 
