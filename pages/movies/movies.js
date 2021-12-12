@@ -23,8 +23,6 @@ const getMovies = () => {
   }
 }*/
 
-
-
 //get movie posters on load
 async function loadCurrentMoviePosters() {
 
@@ -32,13 +30,21 @@ async function loadCurrentMoviePosters() {
 
   let response = await fetch('http://54.158.180.212:9090/api/screenings/get');
   const screeningArray = await response.json();
-  
+  let screeningPosterArr = [];  
+
   screeningArray.forEach(screening => {
+    screeningPosterArr.push(screening.movie.poster);
+  });
+
+  let uniquePosters = [...new Set(screeningPosterArr)];
+  console.log(uniquePosters);
+
+  uniquePosters.forEach(screening => {
+    console.log(screening);
     var div = document.createElement("div");
     div.className="movie";  
     var img = document.createElement("img");
-    var str = screening.movie.poster;
-    img.src = img.src = str.replace(/\s/g, '');
+    img.src = screening;
     div.appendChild(img);
     moviesParagraph.appendChild(div );
   });
