@@ -1,33 +1,3 @@
-//CHANGED DUE TO PERSISTENT JSON TOKEN ERROR
-/*
-const getMovies = () => { 
-
-  const url="http://54.221.49.14:9090/api/movies";
-  const Http = new XMLHttpRequest();
-
-  Http.open("GET", url);
-  Http.send(); //async request
-
-  const moviesParagraph = document.querySelector("#movies");
-  moviesParagraph.innerHTML = "";
-
-  //when something changes ->
-  Http.onreadystatechange = (e) => {
-
-    const movieArray = JSON.parse(Http.response);
-
-    movieArray.forEach(movie => {
-      moviesParagraph.innerHTML += movie.title+"<br>";
-    });
-
-  }
-}
-
-console.log(document.getElementsByClassName("movie-poster"));
-window.onclick = e => {
-  let img = e.target;
-  console.log(img.src);
-} */
 
 let modal;
 let clickedImg;

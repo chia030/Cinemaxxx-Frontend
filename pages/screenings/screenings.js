@@ -5,43 +5,30 @@ const fetchScreenings = (url) => {
            .then((response) => response.json())
            .then((responseArray) => {
             const output = document.querySelector('.screenings')
+            const screeningDiv = document.createElement("div");
   
               responseArray.forEach(screening => {
-                
-                const screeningInfo = document.createElement("div");
-                const movieTitleExists = document.getElementById(screening.movie.title);
+
                 const imgSrc = screening.movie.poster.replace(/\s/g, '');
-                
 
-                const link = `<h1>${screening.movie.title}</h1><br>
-                              <img src="${imgSrc}">`
+                const title = `<h1>${screening.movie.title}</h1><br>
+                              <img src="${imgSrc}">`;
 
-  
-               // screeningInfo.innerHTML += link;
-  
-                const info = document.createElement("ul");
-                info.innerHTML = `<a href='/#/tickets/${screening.screeningId}' data-navigo>
-                <li class="date">Date: ${screening.date}</li>
+                const link = document.createElement("ul");
+                link.innerHTML = `<a href='/#/tickets/${screening.screeningId}' data-navigo>
+                                  <li class="screening-id">#${screening.screeningId}</li>
+                                  <li class="date">Date: ${screening.date}</li>
                                   <li class="time">Time: ${screening.time}</li>
                                   <li class="hall">Hall-ID: ${screening.hall.hallId}</li>
                                   <li class="cinema">Cinema: ${screening.cinema.name}, ${screening.cinema.address}</li>
                                   </a>`;
 
-                if(movieTitleExists){
-                  
-                  movieTitleExists.appendChild(info);
-                  output.insertAdjacentElement("afterbegin", screeningInfo);
-              }else{
-                screeningInfo.innerHTML += link;
-                screeningInfo.id = screening.movie.title;
-                screeningInfo.appendChild(info);
-                output.insertAdjacentElement("afterbegin", screeningInfo);
-                }
-  
+                screeningDiv.innerHTML += title;
+                screeningDiv.appendChild(link);
               });
-  
-            //  output.innerHTML = screeningInfo.outerHTML;
-  
+
+              output.innerHTML = screeningDiv.outerHTML;
+
   })};
    
   export default () => {
@@ -57,7 +44,7 @@ const fetchScreenings = (url) => {
   
           fetchScreenings(allScreeningsUrl);
           
-          // when 'Search' is pressed ->
+          // when 'Filter' is pressed ->
           document.querySelector("#btn-search").onclick = (e) => {
 
             e.preventDefault();

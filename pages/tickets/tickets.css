@@ -34,7 +34,7 @@ ul {
 }
 
 .seat.selected {
-  background-color: #6feaf6;
+  background-color: darkred;
 }
 
 .seat.occupied {

@@ -153,7 +153,6 @@ document.getElementById('reserveBtn').addEventListener("click", function(){
   //need to confirm 200 and link
   window.alert("Success!");
   });
-          
           fetchFreeSeats(id);
           populateUI();
           updateSelectedCount();

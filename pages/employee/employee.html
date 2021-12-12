@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <link rel="stylesheet" href="pages\employee\employee.css">
-    <title>Employee</title>
+    <title>Staff</title>
 </head>
 <body>
 
@@ -12,9 +12,9 @@
       </a>
       <a href="/#/about">About</a>
       <a href="/#/movies">Movies</a>
-      <a href="/#/tickets">Tickets</a>
-      <a href="/#/customer">Customer</a>
-      <a href="/#/employee">Employee</a>
+      <a href="/#/tickets">Buy Tickets</a>
+      <a href="/#/customer">Booked</a>
+      <a href="/#/employee">Staff</a>
     </nav>
   <div class="content">
     <div class="add-movie offer">
@@ -23,16 +23,16 @@
         In order to add a movie you must know it's ID. In case you don't know it, find it on imdb and copy the id from the URL. Afterwards write this ID in the form below. Your desired movie will be added.
       </p>
       <button class="button">OPEN IMDB.com</button>
-      <div class="spacer"></div>
 
       <form id="new-movie">
+        <div class="spacer"></div>
           <label>Movie ID</label>
           <input type="text" id="movieID" placeholder="Insert ID..."><br>
           <input type="submit" value="Add Movie">
       </form>
     </div>   
 
-    <div class="add-screening">
+    <div class="add-screening offer">
 
       <h3>Add screening</h3>
       
@@ -49,6 +49,7 @@
         <input type="date" id="date" name="date" value="2021-12-13" min="2021-12-13" max="2022-12-31">
         <input type="time" id="time" name="time" value="16:00" min="16:00" max="23:30">
         <label>Hall</label>
+        <div class="spacer"></div>
         <select name="halls" id="hall-selector"> 
           <!-- add the options via js -->
         </select> <br>
@@ -63,9 +64,9 @@
           <a href="/">Cinema-XXX</a>
           <a href="/about">About</a>
           <a href="/#/movies">Movies</a>
-          <a href="/#/tickets">Tickets</a>
-          <a href="/#/customer">Customer</a>
-          <a href="/#/employee">Employee</a>
+          <a href="/#/tickets">Buy Tickets</a>
+      <a href="/#/customer">Booked</a>
+      <a href="/#/employee">Staff</a>
         </nav>
         <script src="employee.js"></script>
 </body>
