@@ -3,7 +3,7 @@
 const fetchFreeSeats = (screening) => {
 
   const getScreeningUrl = `http://54.158.180.212:9090/api/screenings/get-by-id/${screening}`;
-  const getTicketsUrl = `http://54.221.49.14:9090/api/tickets/getSeats/1/false/${screening}/`;
+  const getTicketsUrl = `http://54.158.180.212:9090/api/tickets/getSeats/1/false/${screening}/`;
   // url explained .../api/tickets/getSeats/userId=1(this is an admin)/purchased=false(so 'free' seats)/screenindId/`
 
   return fetch(getScreeningUrl)
