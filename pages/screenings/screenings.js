@@ -14,7 +14,8 @@ const fetchScreenings = (url) => {
                 
 
                 const link = `<h1>${screening.movie.title}</h1><br>
-                              <img src="${imgSrc}">`
+                              <img src="${imgSrc}">`;
+                      
 
   
                // screeningInfo.innerHTML += link;
@@ -29,7 +30,6 @@ const fetchScreenings = (url) => {
                 if(movieTitleExists){
                   
                   movieTitleExists.appendChild(info);
-                  output.insertAdjacentElement("afterbegin", screeningInfo);
               }else{
                 screeningInfo.innerHTML += link;
                 screeningInfo.id = screening.movie.title;
