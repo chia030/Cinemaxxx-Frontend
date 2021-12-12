@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-body {
+.ticket-body {
   background-color: #272727;
   display: flex;
   flex-direction: column;
@@ -26,11 +26,11 @@ ul {
 
 .seat {
   background-color: #444451;
-  height: 12px;
-  width: 15px;
-  margin: 3px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  height: 24px;
+  width: 30px;
+  margin: 6px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .seat.selected {
@@ -88,7 +88,7 @@ ul {
   background-color: #fff;
   height: 70px;
   width: 100%;
-  margin: 15px 0;
+  margin: 40px 0;
   transform: rotateX(-45deg);
   box-shadow: 0 3px 10px rgba(255, 255, 255, 0.75);
 }
@@ -100,7 +100,8 @@ p.text {
 p.text span {
   color: #6feaf6;
 }
-h2{
+
+h2 {
   text-align: center;
   font-size: 50px;
   color: whitesmoke;

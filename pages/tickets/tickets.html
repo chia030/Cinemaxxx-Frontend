@@ -4,6 +4,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
   <link rel="stylesheet" href="pages\main\main.css">
+  <link rel="stylesheet" href="pages\tickets\tickets.css">
     <title>Tickets</title>
 </head>
 <body>
@@ -14,16 +15,59 @@
       <a href="/#/about">About</a>
       <a href="/#/movies">Movies</a>
       <a href="/#/tickets">Tickets</a>
+      <a href="/#/customer">Customer</a>
       <a href="/#/employee">Employee</a>
     </nav>
 
     <div class="screening-available-seats"></div>
+
+    <div class = "ticket-body">
+  
+      <ul class="showcase">
+        <li>
+          <div class="seat"></div>
+          <small>Available</small>
+        </li>
+  
+        <li>
+          <div class="seat selected"></div>
+          <small>Selected</small>
+        </li>
+  
+        <li>
+          <div class="seat occupied"></div>
+          <small>Occupied</small>
+        </li>
+      </ul>
+  
+      <div class="container">
+        <div class="screen"></div>
+        <div class="row" id="row1"></div>
+        <div class="row" id="row2"></div>
+        <div class="row" id="row3"></div>
+        <div class="row" id="row4"></div>
+        <div class="row" id="row5"></div>
+        <div class="row" id="row6"></div>
+        <div class="row" id="row7"></div>
+        <div class="row" id="row8"></div>
+        <div class="row" id="row9"></div>
+        <div class="row" id="row10"></div>
+        <div class="row" id="row11"></div>
+      </div>
+  
+      <p class="text">
+        You have selected <span id="count">0</span> seats for a price of $<span id="total">0</span>
+      </p>
+      <button id="reserveBtn">Reserve tickets</button>
+      <script src="tickets2.js"></script>
+    </div>
     
     <nav class="navMenu footer">
           <a href="/">Cinema-XXX</a>
           <a href="/#/about">About</a>
           <a href="/#/movies">Movies</a>
           <a href="/#/tickets">Tickets</a>
+          <a href="/#/customer">Customer</a>
           <a href="/#/employee">Employee</a>
     </nav>
 </body>
