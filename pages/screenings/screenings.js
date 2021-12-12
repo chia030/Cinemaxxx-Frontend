@@ -11,8 +11,10 @@ const fetchScreenings = (url) => {
 
                 const imgSrc = screening.movie.poster.replace(/\s/g, '');
 
+
                 const title = `<h1>${screening.movie.title}</h1><br>
                               <img src="${imgSrc}">`;
+
 
                 const link = document.createElement("ul");
                 link.innerHTML = `<a href='/#/tickets/${screening.screeningId}' data-navigo>
@@ -25,6 +27,7 @@ const fetchScreenings = (url) => {
 
                 screeningDiv.innerHTML += title;
                 screeningDiv.appendChild(link);
+
               });
 
               output.innerHTML = screeningDiv.outerHTML;
