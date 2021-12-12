@@ -32,6 +32,8 @@ Gloria(VingardiumGloriosa):
 Patrik(MrBigRedButton):
 - hosting the backend properly, 
 - connecting to the api... (Patrik add more!)
+- staring at a blank wall for hours
+- pipeline, backend and db migration
 
 ## Sprints and planning
 
@@ -55,7 +57,7 @@ Patrik(MrBigRedButton):
 •    Let users reserve tickets for a specific show. - 6 story points *DONE*
 •    Finishing unfinished stories from last sprint *DONE*
 •    Implement security and login. - Not finished
-•    Other features. (Checking for resrvations)
+•    Other features. (Checking for reservations)
 
 
 ## Backend/API code: 
