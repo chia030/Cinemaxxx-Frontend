@@ -4,7 +4,10 @@ async function loadMoviePosters() {
   const moviesParagraph = document.querySelector(".movies-container");
 
   let response = await fetch('http://54.158.180.212:9090/api/screenings/get');
+
   const screeningArray = await response.json();
+
+
   let screeningPosterArr = [];  
 
   screeningArray.forEach(screening => {
@@ -22,8 +25,7 @@ async function loadMoviePosters() {
     img.setAttribute("data-id","demo-modal");
     div.appendChild(img);
     moviesParagraph.appendChild(div );
-  });
-}
+  })};
 
 export default () => {
   const content = document.querySelector(".content");

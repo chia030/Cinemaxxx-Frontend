@@ -12,29 +12,36 @@
       </a>
       <a href="/#/about">About</a>
       <a href="/#/movies">Movies</a>
-      <a href="/#/tickets">Tickets</a>
-      <a href="/#/customer">Customer</a>
-      <a href="/#/employee">Employee</a>
+      <a href="/#/tickets">Buy Tickets</a>
+      <a href="/#/customer">Booked</a>
+      <a href="/#/employee">Staff</a>
     </nav>
 
-      <div class="tickets-timetable offer">
-        <h2>Timetable</h2>
-        <form class="timetable-form">
-          <input type="date" id="date-from" name="date-from" value="2021-12-01" min="2020-01-01" max="2022-12-31">
-          <input type="date" id="date-to" name="date-to" value="2021-12-31" min="2020-01-01" max="2022-12-31">
-            <button id="btn-search">Search</button>
-        </form>
-      </div>
+      <div class="purchase-tickets offer">
 
+        <h3>Purchase Tickets</h3>
+        <p>You can find all the current screenings down below. If you wish to filter the selection, you may set a start and an end date.</p>
+        <p>Click on a screening to purchase a ticket for the show.</p>
+        
+        <form class="timetable-form">
+          <label>From:</label> 
+          <input type="date" id="date-from" name="date-from" value="2021-12-01" min="2021-12-01" max="2022-12-31">
+          <label>To:</label>
+          <input type="date" id="date-to" name="date-to" value="2021-12-31" min="2021-12-13" max="2022-12-31">
+            <button id="btn-search">Filter</button>
+        </form>
+
+      </div>
+      
       <div class="screenings"></div>
     
     <nav class="navMenu footer">
           <a href="/">Cinema-XXX</a>
           <a href="/#/about">About</a>
           <a href="/#/movies">Movies</a>
-          <a href="/#/tickets">Tickets</a>
-          <a href="/#/customer">Customer</a>
-          <a href="/#/employee">Employee</a>
+          <a href="/#/tickets">Buy Tickets</a>
+          <a href="/#/customer">Booked</a>
+          <a href="/#/employee">Staff</a>
     </nav>    
 </body>
 </html>
