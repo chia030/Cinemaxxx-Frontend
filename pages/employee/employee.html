@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel="stylesheet" href="pages\main\main.css">
+    <link rel="stylesheet" href="pages\employee\employee.css">
     <title>Employee</title>
 </head>
 <body>
@@ -16,13 +16,14 @@
       <a href="/#/customer">Customer</a>
       <a href="/#/employee">Employee</a>
     </nav>
-
-    <div class="add-movie">
+  <div class="content">
+    <div class="add-movie offer">
       <h3>Add movie</h3>
       <p>
         In order to add a movie you must know it's ID. In case you don't know it, find it on imdb and copy the id from the URL. Afterwards write this ID in the form below. Your desired movie will be added.
       </p>
       <button class="button">OPEN IMDB.com</button>
+      <div class="spacer"></div>
 
       <form id="new-movie">
           <label>Movie ID</label>
@@ -44,6 +45,7 @@
         <select name="movies" id="movie-selector">
           <!-- add the options via js -->
         </select>
+        <div class="spacer"></div>
         <input type="date" id="date" name="date" value="2021-12-13" min="2021-12-13" max="2022-12-31">
         <input type="time" id="time" name="time" value="16:00" min="16:00" max="23:30">
         <label>Hall</label>
@@ -52,8 +54,10 @@
         </select> <br>
         <input type="submit" value="Add Screening">
       </form>
+      <div class="spacer"></div>
 
     </div>
+  </div>
     
         <nav class="navMenu footer">
           <a href="/">Cinema-XXX</a>
