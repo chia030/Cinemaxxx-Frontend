@@ -26,9 +26,33 @@
       <form id="new-movie">
           <label>Movie ID</label>
           <input type="text" id="movieID"><br>
-          <input type="submit" value="Add">
+          <input type="submit" value="Add Movie">
       </form>
     </div>   
+
+    <div class="add-screening">
+
+      <h3>Add screening</h3>
+      
+      <p>
+        Select one of the movies, pick a date, a time and a hall to create a new screening.
+      </p>
+
+      <form id="new-screening">
+        <label>Movie</label>
+        <select name="movies" id="movie-selector">
+          <!-- add the options via js -->
+        </select>
+        <input type="date" id="date" name="date" value="2021-12-13" min="2021-12-13" max="2022-12-31">
+        <input type="time" id="time" name="time" value="16:00" min="16:00" max="23:30">
+        <label>Hall</label>
+        <select name="halls" id="hall-selector"> 
+          <!-- add the options via js -->
+        </select> <br>
+        <input type="submit" value="Add Screening">
+      </form>
+
+    </div>
     
         <nav class="navMenu footer">
           <a href="/">Cinema-XXX</a>
@@ -37,5 +61,6 @@
           <a href="/#/tickets">Tickets</a>
           <a href="/#/employee">Employee</a>
         </nav>
+        <script src="employee.js"></script>
 </body>
 </html> 
