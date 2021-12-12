@@ -49,7 +49,7 @@ Patrik(MrBigRedButton):
 •    As a customer I want to be able to quickly find information about movies that are playing and the cinema, so I can pick a movie and find out basic information about the cinema - (Create a welcome page showing info about both the cinema and the movies playing.) - 3 story points *DONE*
 
  - 2nd Sprint
- - 
+
 ***Story points with backlog tasks***
 •    Let user see all available seat for a show (so they can reserve seats) - 8 story points *DONE*
 •    Let users reserve tickets for a specific show. - 6 story points *DONE*
