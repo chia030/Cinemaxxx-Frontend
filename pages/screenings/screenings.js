@@ -12,15 +12,8 @@ const fetchScreenings = (url) => {
                 const movieTitleExists = document.getElementById(screening.movie.title);
                 const imgSrc = screening.movie.poster.replace(/\s/g, '');
                 
-<<<<<<< HEAD
                 const link = `
                               <img src="${imgSrc}" style="margin: 10px 50px;">`
-=======
-
-                const link = `<h1>${screening.movie.title}</h1><br>
-                              <img src="${imgSrc}">`
-
->>>>>>> fc8b72e024afb6d8de1820c6f6c09d4f41a022bd
   
                // screeningInfo.innerHTML += link;
   
