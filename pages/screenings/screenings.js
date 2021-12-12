@@ -23,8 +23,9 @@ const fetchScreenings = (url) => {
                 info.innerHTML = `<a href='/#/tickets/${screening.screeningId}' data-navigo>
                 <li class="date">Date: ${screening.date}</li>
                                   <li class="time">Time: ${screening.time}</li>
-                                  <li class="hall">Hall-ID: ${screening.hall.hallId}</li></a>`;
-                
+                                  <li class="hall">Hall-ID: ${screening.hall.hallId}</li>
+                                  <li class="cinema">Cinema: ${screening.cinema.name}, ${screening.cinema.address}</li>
+                                  </a>`;
 
                 if(movieTitleExists){
                   
