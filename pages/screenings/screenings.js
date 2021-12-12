@@ -14,7 +14,7 @@ const fetchScreenings = (url) => {
                 const link = `<a href='/#/tickets/${screening.screeningId}' data-navigo>
                               <img src="${imgSrc}">
                               <br> ${screening.movie.title}
-                            </a>`
+                              </a>`
   
                 screeningInfo.innerHTML += link;
   
