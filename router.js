@@ -3,6 +3,7 @@ import renderAbout from "./pages/about/about.js";
 import renderMovies from "./pages/movies/movies.js";
 import renderScreenings from "./pages/screenings/screenings.js";
 import renderTickets from "./pages/tickets/tickets.js";
+import renderCustomer from "./pages/customer/customer.js";
 import renderEmployee from "./pages/employee/employee.js";
 
 
@@ -26,6 +27,9 @@ export default function () {
     },
     "/tickets/:id":({data}) => { //data is object = {id: #idnumber}
       renderTickets(data.id);
+    },
+    customer: () => {
+      renderCustomer();
     },
     employee: () => {
       renderEmployee();
