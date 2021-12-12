@@ -30,10 +30,13 @@ window.onclick = e => {
 } */
 
 let modal;
+let clickedImg;
+let id;
+
 document.addEventListener("click", (e) => {
   if (e.target.className === "modal-open") {
-    let img = e.target;
-    console.log(img.src);
+    clickedImg = e.target;
+    console.log(clickedImg.src);
     modal = document.getElementById(e.target.dataset.id);
     openModal(modal);
   } else if (e.target.className === "modal-close") {
@@ -43,11 +46,17 @@ document.addEventListener("click", (e) => {
   }
 });
 
+
 async function getMovieInfo() {
   let response = await fetch("http://54.158.180.212:9090/api/movies/");
   const moviesssss = await response.json();
+  moviesssss.forEach(movie => {
+    if (movie.poster==clickedImg.src){
+      id = movie.movieId;
+    }
+  });
 
-  response = await fetch("http://54.158.180.212:9090/api/movies/id/tt0295297");
+  response = await fetch("http://54.158.180.212:9090/api/movies/id/"+id);
   const movie = await response.json();
 
   const movieTitle = document.getElementsByClassName("movie-title")[0];
