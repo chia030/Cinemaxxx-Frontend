@@ -4,13 +4,16 @@ const fetchScreenings = (url) => {
     return fetch(url)
            .then((response) => response.json())
            .then((responseArray) => {
-            const output = document.querySelector('.screenings')
-  
+            
+            document.getElementById('screenings2').textContent = '';
+            const output = document.querySelector('.screenings');
               responseArray.forEach(screening => {
                 
                 const screeningInfo = document.createElement("div");
                 const movieTitleExists = document.getElementById(screening.movie.title);
                 const imgSrc = screening.movie.poster.replace(/\s/g, '');
+
+
                 
                 const link = `
                               <img src="${imgSrc}" style="margin: 10px 50px;">`
