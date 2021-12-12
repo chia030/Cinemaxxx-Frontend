@@ -19,6 +19,9 @@ Chiara:
 ...
 
 Gloria:
+- Display movies, add movie, movie info....
+- crying
+- styling of website
 
 Patrik:
 
