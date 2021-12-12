@@ -9,7 +9,7 @@ async function postMovie() {
 }
 
 //thx <3
-async function postMovie() {
+async function editMovie() {
   const form = document.getElementById('edit-movie'); 
   console.log(form.elements.namedItem("movieID").value);
   const response = await fetch('http://54.221.49.14:9090/api/movies/editDescription/'+form.elements.namedItem("movieID").value+"/"+form.elements.namedItem("movieDescription").value, {
