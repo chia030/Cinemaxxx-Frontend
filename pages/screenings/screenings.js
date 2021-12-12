@@ -12,12 +12,13 @@ const fetchScreenings = (url) => {
                 const movieTitleExists = document.getElementById(screening.movie.title);
                 const imgSrc = screening.movie.poster.replace(/\s/g, '');
                 
-                const link = `<h1>${screening.movie.title}</h1><br>
-                              <img src="${imgSrc}">`
+                const link = `
+                              <img src="${imgSrc}" style="margin: 10px 50px;">`
   
                // screeningInfo.innerHTML += link;
   
                 const info = document.createElement("ul");
+                info.id = "screening-info";
                 info.innerHTML = `<a href='/#/tickets/${screening.screeningId}' data-navigo>
                 <li class="date">Date: ${screening.date}</li>
                                   <li class="time">Time: ${screening.time}</li>
@@ -33,6 +34,7 @@ const fetchScreenings = (url) => {
                 screeningInfo.id = screening.movie.title;
                 screeningInfo.appendChild(info);
                 output.insertAdjacentElement("afterbegin", screeningInfo);
+              //  output.insertAdjacentElement("afterbegin", screeningInfo);
                 }
   
               });
