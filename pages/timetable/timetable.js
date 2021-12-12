@@ -7,7 +7,7 @@ const getTimetable = () => {
 
     // need to change for server when its up and running
     const Http = new XMLHttpRequest();
-    let url = `http://54.221.49.14:9090/api/screenings/get?date1=${dateFrom}&date2=${dateTo}`;
+    let url = `http://54.158.180.212:9090/api/screenings/get?date1=${dateFrom}&date2=${dateTo}`;
 
     Http.open("GET", url);
    Http.send(); //async request
